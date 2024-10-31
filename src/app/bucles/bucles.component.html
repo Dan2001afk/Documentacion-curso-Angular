@@ -1,0 +1,10 @@
+<!-- prueba de bucle For -->
+<div class="container">
+
+<ul>
+    <li *ngFor="let persona  of personas; let i = index">
+       {{i+1}} - {{ " nombre: " + persona.nombre + " edad " + persona.edad + " estudio " + persona.estudio}}
+    </li>
+</ul>
+
+</div>

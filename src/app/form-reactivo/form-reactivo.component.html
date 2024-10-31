@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="card">
+        <form [formGroup]="formReactivo">
+            <div class="card-body">
+                <div class="bm-2">
+    <br>
+                    <label class="form-label">
+                        Nombre:
+                    </label>
+                    <input type="text" formControlName="name" class="form-control" placeholder="Digita Tu Nombre">
+                    
+                </div>
+
+                <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+                    nombre obligatorio
+                </div>
+    
+                <div class="bm-2">
+                    <br>
+                    <label class="form-label">
+                        Correo Electronico:
+                    </label>
+                    <input type="text" formControlName="email" class="form-control" placeholder="Digita Tu Correo Electronico">
+                                    
+                </div>
+
+                <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
+                    <span *ngIf="email.errors?.['required']">
+                        el correo es obligatorio
+                    </span>
+
+                    <span *ngIf="email.errors?.['email']">
+                        Digite un correo Valido
+                    </span>
+                </div>
+
+                <button class="btn btn-danger mt-2" [disabled]="formReactivo.invalid" (click)="EnviarDatos()">
+                    Enviar
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- {{name.value}} -->
+    <br>
+    <!-- {{email.value}} -->
+    <!-- verificar que los errores de validacion se cumplan 
+   {{ email.errors | json}} -->
+</div>
+

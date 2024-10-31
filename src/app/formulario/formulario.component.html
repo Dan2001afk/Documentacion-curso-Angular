@@ -1,0 +1,25 @@
+
+<!-- pasar un nombre mendiante un input y mostrarlo en la consola mediante el uso de un evento [click] -->
+
+<!-- VARIABLE DE PLANTILLA #name -->
+<!-- condicionales [ [if] [else] ] #name -->
+
+
+<div class="container"> 
+    <input type="text" class="form-control text-center" placeholder="Nombre" #name>
+
+<button class="btn btn-danger" (click)="mostrar_al_dar_click(name.value)" >Mostrar en consola</button>
+
+<div class="alert alert-primary mt-4" *ngIf="openAlert else mensaje">
+    <p>se ha enviado exitosamente</p>
+    <button class="btn btn-danger" (click)="openAlert = false">
+        x
+    </button>
+</div>
+
+<ng-template #mensaje>
+    <div class="alert alert-danger mt-4">
+        no se ha enviado mensaje
+    </div>
+</ng-template>
+</div>

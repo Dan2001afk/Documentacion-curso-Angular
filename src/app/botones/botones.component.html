@@ -1,0 +1,26 @@
+<!------------------------------- //PRUEBAS CON BOTONES PARA ACTIVAR O INABILITARLOS   ---------------------------------->
+
+
+<!-- <div [class.disabled]="button_Status" class="btn btn-primary" (click)="text_color= 'text-primary'">Texto azul</div>
+<div [class.disabled]="button_Status" class="btn btn-danger mx-2" (click)="text_color= 'text-danger'">Texto rojo</div>
+<div [class.disabled]="button_Status" class="btn btn-success" (click)="text_color= 'text-success'">Texto Verde</div>
+
+<p>{{ text_color }}</p>
+
+<p [class]="text_color">Texto que cambiara de color</p>
+
+<button class="btn btn-danger" (click)="button_Status = !button_Status">Activar / Desactivar</button>
+ -->
+<div>
+
+    <button class="btn btn-primary mx-2" (click)="src = 'https://images.pexels.com/photos/28960478/pexels-photo-28960478.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'">
+        imagen 1
+    </button>
+    
+    <button class="btn btn-danger" (click)="src = 'https://images.pexels.com/photos/28158791/pexels-photo-28158791/free-photo-of-resfriado-frio-nieve-nevar.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'">
+        imagen 2
+    </button>
+
+</div>
+
+<img [src]="src" alt="">

@@ -1,0 +1,62 @@
+<!-- ESTE ES UN FORMULARIO DE PLANTILLA, PARA UN VOLUMEN DE DATOS MEDIO BAJO, POR BUENAS PRACTICAS Y NO ENSUCIAR EL HTML -->
+<div class="container">
+    <h1 class="text-center">Hola Mundo</h1>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form (ngSubmit)="EnvirDatos()" #FormUser="ngForm">
+                <div class="mb-2">
+                    <label for="" class="form-label">
+                        Nombre
+                    </label>
+                    <input type="text" name="Nombre" class="form-control" placeholder="por favor digita tu nombre" [(ngModel)]="persona.Nombre" required #Name="ngModel">
+                </div>
+
+                <div class="alert alert-danger" [hidden]="Name.valid || Name.pristine">
+                    Nombre Obligatorio
+                </div>
+    
+                <div>
+                    <label for="" class="form-label">
+                        Edad:
+                    </label>
+                    <input type="number" name="Edad" class="form-control" placeholder="Digita tu edad" [(ngModel)]="persona.Edad"required #Edad="ngModel">
+                </div>
+
+                <div class="alert alert-danger" [hidden]="Edad.valid || Edad.pristine">
+                    Edad obligatoria
+                </div>
+
+                <div>
+                    <label for="" class="form-label">
+                        Estudio:
+                    </label>
+                    <input type="text" name="Estudio" class="form-control" placeholder="Digita tu Profesion " [(ngModel)]="persona.Estudio"required #Estudio="ngModel">
+                </div>
+
+                <div class="alert alert-danger" [hidden]="Estudio.valid || Estudio.pristine">
+                    Estudio obligatorio
+                </div>
+    
+<!--para cuando se van a validar pocos datos  <button class="btn btn-danger mt-2" [disabled]="Name.invalid || Edad.invalid || Estudio.invalid"> -->
+                <button class="btn btn-danger mt-2">
+                    Enviar
+                </button>
+            </form>
+        </div>
+    </div>
+<!-- convertir datos persona en archivo,json -->
+<!-- {{ persona | json }} -->
+
+<!-- validacion de errores en formularios mediante alertas
+
+{{ Name.errors | json}}
+<br>
+{{ Name.valid }} -->
+
+{{FormUser.valid}}
+</div>
+
+

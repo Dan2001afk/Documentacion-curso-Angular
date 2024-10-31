@@ -1,0 +1,12 @@
+<form (ngSubmit)="addMessage()">
+    <label class="form-label">Digite un Comentario</label>
+    <br>
+    <input type="form-control" name="message" placeholder="Comentario" [(ngModel)]="message">
+    <button class="btn btn-danger mb-2 mt-2" >
+        Enviar Comentario
+    </button>
+</form>
+
+
+<!-- {{message}} -->
+<!-- {{MessagesService.messages | json}} -->
